@@ -36,7 +36,7 @@ function createServer() {
     }
 
     if (errors.length > 0) {
-      res.writeHead(400, 'Bad Request', { 'Content-Type': 'application/json' });
+      res.writeHead(400, 'Bad request', { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ errors }));
 
       return;
@@ -51,7 +51,7 @@ function createServer() {
       convertedText: result.convertedText,
     };
 
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.writeHead(200, 'OK', { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(response));
   });
 }
